@@ -17,8 +17,9 @@ class CreateBookingsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('namatim',15);
-            $table->date('tanggal');
-            $table->time('jam');
+            $table->integer('harga')->unsigned();
+            $table->integer('jam')->unsigned();
+            $table->datetime('tanggal');
             $table->timestamps('');
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade');
